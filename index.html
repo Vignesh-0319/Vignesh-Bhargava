@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Vignesh Bhargava — Computer Science Engineering student & backend developer. Java, Python, Node.js, cloud and scalable systems." />
+<title>Vignesh Bhargava — Backend Developer & CS Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<header id="navbar">
+  <nav class="container nav">
+    <a href="#home" class="logo">VIGNESH<span class="dot">.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#skills">SKILLS</a></li>
+      <li><a href="#projects">PROJECTS</a></li>
+      <li><a href="#education">EDUCATION</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow"><span class="line"></span> HELLO, I'M</p>
+        <h1>Vignesh <span class="gradient-accent">Bhargava</span></h1>
+        <h2 class="role">Backend Developer & <span class="text-accent">CS Engineer</span></h2>
+        <p class="lead">I build scalable backend systems, real-time tracking platforms, and modern web applications. Focused on Java, Python, Node.js and cloud infrastructure.</p>
+        <div class="cta">
+          <a href="#contact" class="btn btn-primary">Get in touch</a>
+          <a href="Vignesh_Bhargava_Resume.pdf" download class="btn btn-ghost">Download CV</a>
+        </div>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/vignesh-bhargava-66a546326/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">gh</a>
+          <a href="mailto:vignesh@example.com" aria-label="Email">@</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="card-bar"><span></span><span></span><span></span></div>
+<pre class="code"><span class="c-pink">const</span> <span class="c-blue">developer</span> = {
+  <span class="c-blue">name</span>: <span class="c-yellow">'Vignesh Bhargava'</span>,
+  <span class="c-blue">role</span>: <span class="c-orange">'Backend Developer'</span>,
+  <span class="c-blue">stack</span>: [<span class="c-yellow">'Java'</span>, <span class="c-yellow">'Python'</span>, <span class="c-yellow">'Node.js'</span>],
+  <span class="c-blue">cloud</span>: [<span class="c-yellow">'Oracle'</span>, <span class="c-yellow">'Azure'</span>],
+  <span class="c-blue">passion</span>: <span class="c-orange">'building scalable systems'</span>,
+};</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <p class="eyebrow"><span class="line"></span> ABOUT ME</p>
+      <div class="about-grid">
+        <div>
+          <h3 class="section-title">Who <span class="gradient-accent">I am?</span></h3>
+          <p>My name is <strong>Vignesh Bhargava</strong>. I'm a Computer Science Engineering student at Chitkara University with a strong focus on backend systems, automation, and scalable application development.</p>
+          <p>I've built real-time tracking systems, data dashboards, and interactive web apps. My core stack is <span class="text-primary">Java, Python, Node.js</span> and modern web tooling.</p>
+          <div class="stats">
+            <div class="stat"><div class="k">8.71</div><div class="v">CGPA</div></div>
+            <div class="stat"><div class="k">10+</div><div class="v">Projects</div></div>
+            <div class="stat"><div class="k">4+</div><div class="v">Certifications</div></div>
+          </div>
+        </div>
+        <div class="profile-wrap">
+          <div class="profile-glow"></div>
+          <img src="assets/profile.jpeg" alt="Vignesh Bhargava" class="profile" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <p class="eyebrow"><span class="line"></span> SKILLS</p>
+      <h3 class="section-title">The <span class="gradient-accent">tech stack</span> I work with</h3>
+    </div>
+    <div class="marquee-wrap">
+      <div class="marquee" id="marquee"></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="container">
+      <p class="eyebrow"><span class="line"></span> PROJECTS</p>
+      <h3 class="section-title">Things I've <span class="gradient-accent">built</span></h3>
+      <div class="projects" id="projects-list"></div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section">
+    <div class="container">
+      <p class="eyebrow"><span class="line"></span> EDUCATION</p>
+      <h3 class="section-title">My <span class="gradient-accent">academic</span> journey</h3>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="edu-top"><div class="ico">🎓</div><span class="period">2024 — 2028</span></div>
+          <h4>B.E. Computer Science Engineering</h4>
+          <p class="muted">Chitkara University, Patiala</p>
+          <p class="accent">CGPA: 8.71 / 10</p>
+        </div>
+        <div class="edu-card">
+          <div class="edu-top"><div class="ico">🎓</div><span class="period">2022 — 2024</span></div>
+          <h4>Senior Secondary (Class XII)</h4>
+          <p class="muted">Guru Nanak Foundation Public School, Patiala</p>
+          <p class="accent">Science (PCM with Computer Science)</p>
+        </div>
+        <div class="edu-card">
+          <div class="edu-top"><div class="ico">🎓</div><span class="period">Until 2022</span></div>
+          <h4>Secondary School (Class X)</h4>
+          <p class="muted">Milestone Smart School, Patiala (ICSE)</p>
+          <p class="accent">Foundation in Math, Science & Computers</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="section">
+    <div class="container">
+      <p class="eyebrow"><span class="line"></span> CERTIFICATIONS</p>
+      <h3 class="section-title">What I've <span class="gradient-accent">earned</span></h3>
+      <div class="certs">
+        <a href="certificates/Oracle_OCI_Developer_Professional.pdf" target="_blank" rel="noopener" class="cert">
+          <div class="ico-sq">🏆</div>
+          <div><h4>Oracle Cloud Infrastructure Developer Professional ↗</h4><span class="muted mono">2025 · View certificate</span></div>
+        </a>
+        <a href="certificates/Oracle_OCI_DevOps_Professional.pdf" target="_blank" rel="noopener" class="cert">
+          <div class="ico-sq">🏆</div>
+          <div><h4>Oracle Cloud Infrastructure DevOps Professional ↗</h4><span class="muted mono">2025 · View certificate</span></div>
+        </a>
+        <div class="cert">
+          <div class="ico-sq">🏆</div>
+          <div><h4>Microsoft Azure Fundamentals</h4><span class="muted mono">2024</span></div>
+        </div>
+        <div class="cert">
+          <div class="ico-sq">🏆</div>
+          <div><h4>IBM Web Development Fundamentals</h4><span class="muted mono">2024</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container contact-wrap">
+      <p class="eyebrow"><span class="line"></span> CONTACT</p>
+      <h3 class="section-title">Let's <span class="gradient-accent">work together</span></h3>
+      <p class="muted">Have a project in mind or just want to chat? Drop a message.</p>
+      <form id="contactForm" class="contact-form">
+        <div class="row">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Your email" required />
+        </div>
+        <input type="text" name="subject" placeholder="Subject" required />
+        <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <p>© <span id="year"></span> Vignesh Bhargava. Built with HTML, CSS & JS.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
