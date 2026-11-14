@@ -5,3 +5,25 @@
 @keyframes carSettle{from{transform:translateX(110%) skewX(-7deg)}to{transform:translateX(0) skewX(-7deg)}}@keyframes driverExit{from{opacity:0;transform:translateX(45px)}to{opacity:1;transform:none}}@keyframes cardThrow{from{opacity:0;transform:translate(0,30px) rotate(-12deg)}to{opacity:1;transform:translate(-130px,-35px) rotate(-12deg)}}@keyframes smokeFade{from{opacity:.7;transform:scale(.4)}to{opacity:0;transform:scale(1.7)}}@keyframes nameReveal{from{opacity:0;transform:translateY(25px);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @media(max-width:800px){.topbar{padding:1rem 1.25rem}.brand b{display:none}.title-controls{left:1.25rem;bottom:6rem}.scene-nav{gap:.7rem;left:1.25rem;right:1.25rem;transform:none;justify-content:space-between}.scene-nav a{font-size:.6rem}.nav-preview{display:none}.car{left:8%;bottom:17%;width:90vw;height:170px}.driver{left:46%;bottom:18%;transform:scale(.8);transform-origin:bottom}.keycard{right:-105px}.title-copy{padding:0 1rem 3rem}.title-copy h1{font-size:clamp(2.9rem,15vw,5rem)}.content-panel{padding:6rem 1.25rem}.panel-heading{display:block;margin-bottom:3rem}.panel-heading h2{margin:1.2rem 0}.panel-heading p{max-width:500px}.projects-grid,.certificate-list,.achievements,.contact-card{grid-template-columns:1fr}.project-card,.project-card.featured,.project-card:last-child{grid-column:auto;min-height:380px}.certificate-tools{display:block}.filter-list{margin-top:.7rem}.case-dialog{top:2%;max-height:96vh}.case-media{height:220px}.case-details{grid-template-columns:1fr}footer{display:block;padding:1.25rem}footer span+span{display:block;margin-top:.7rem}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.title-copy h1,.hero-tagline{opacity:1!important;transform:none!important;filter:none!important}.deck-fallback{display:block}}
+
+:root{--purple:#a78bfa}
+:focus-visible{outline:2px solid var(--green);outline-offset:4px}
+.project-card:last-child{grid-column:auto}
+.project-art.flow{background:linear-gradient(135deg,#1b1a2e,#0f1117)}
+.project-art.flow:before{content:attr(data-label);position:absolute;left:13%;top:17%;color:var(--green);font:500 .72rem var(--mono)}
+.project-art.flow:after{content:"\25A2  \2192  \25A2  \2192  \25A2";position:absolute;left:12%;top:35%;font-size:3.5rem;color:#c5c3f5;letter-spacing:.6rem;white-space:nowrap}
+.case-media.flow{background:linear-gradient(135deg,#1b1a2e,#0f1117)}.case-media.flow .plant-large{color:#c5c3f5}
+.about-panel{min-height:auto;padding-bottom:6rem}
+.about-grid{display:grid;grid-template-columns:200px 1fr;gap:3rem;align-items:start}
+.about-grid img{width:200px;height:200px;object-fit:cover;border:1px solid var(--line);filter:grayscale(.25)}
+.about-copy{font-size:1.2rem;line-height:1.6;max-width:640px}
+.stack{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin-top:1.8rem}
+.stack li{border:1px solid var(--line);padding:.5rem .75rem;font:500 .72rem var(--mono);color:var(--muted)}
+.more-certs{margin-top:1.2rem}
+.more-certs summary{cursor:pointer;color:var(--green);font:500 .72rem var(--mono);letter-spacing:.1em;padding:.8rem 0;min-height:44px}
+.more-certs .certificate-list{margin-top:.8rem}
+.certificate-entry h3{font-size:1rem}
+@media(max-width:800px){.about-grid{grid-template-columns:1fr}.about-panel{padding-bottom:4rem}}
+.project-card:not(.featured) .project-art.wave:after{top:9%}
+.project-card:not(.featured) .project-art.flow:before{top:8%;left:12%}
+.project-card:not(.featured) .project-art.flow:after{top:15%;font-size:2.8rem}
