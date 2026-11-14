@@ -1,73 +1,72 @@
-// Year
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// Navbar scroll
-const nav = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 30);
-});
-
-// Mobile menu
-const menuBtn = document.getElementById('menuBtn');
-const navLinks = document.getElementById('navLinks');
-menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
-navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-
-// Skills marquee
-const skills = ["Java","Python","C","JavaScript","React","Node.js","MongoDB","MySQL","Git","GitHub","VS Code","Oracle Cloud","Azure","DSA","Computer Architecture"];
-const marquee = document.getElementById('marquee');
-const all = [...skills, ...skills];
-marquee.innerHTML = all.map(s => `
-  <div class="skill">
-    <div class="badge">${s.slice(0,2).toUpperCase()}</div>
-    <span class="name">${s}</span>
-  </div>`).join('');
-
-// Projects
 const projects = [
-  {
-    name:"Drug Inventory & Supply Chain Tracking",
-    tools:["Node.js","MongoDB","Express","React"],
-    role:"Backend Developer",
-    description:"Built a real-time system to monitor drug distribution and availability. Improved supply visibility and reduced shortage risks through optimized tracking logic, with strong focus on data consistency and efficient inventory management."
-  },
-  {
-    name:"Social Media Analytics Dashboard",
-    tools:["React","Node.js","Chart.js","REST APIs"],
-    role:"Full Stack Developer",
-    description:"Developed a dashboard to aggregate and analyze multi-platform social data. Implemented insights and visualization for performance tracking with clean, responsive components."
-  },
-  {
-    name:"Quiz Web Application",
-    tools:["React","JavaScript","Tailwind CSS"],
-    role:"Frontend Developer",
-    description:"Created an interactive platform with dynamic question generation. Designed responsive UI with smooth animations and a focus on improved user experience."
-  }
+  { id:'swiftride', title:'SwiftRide', subtitle:'Ride-Booking Application', type:'BACKEND / REST API', art:'map', featured:true, description:'A ride-booking system built around clear booking flows, fare estimates, ride history, and cancellation.', details:[['Problem','Make a ride flow predictable for riders and drivers.'],['Technical decision','Express REST endpoints and MongoDB geospatial queries find nearby drivers; pickup and drop-off coordinates feed the fare estimate.'],['Contribution','Backend API design, data flow, and integration decisions.']], links:[['View Code','https://github.com/Vignesh-0319/Swift-Ride']] },
+  { id:'plantnotes', title:'PlantNotes', subtitle:'iOS Plant Care App', type:'NATIVE IOS / SWIFT', art:'plant', featured:true, description:'A calm garden overview and plant-detail experience for watering schedules, favorites, and search.', details:[['Problem','Keep list, detail, and summary views in sync without fragile manual updates.'],['Technical decision','A shared Swift Observation store makes state changes flow through the app predictably.'],['Contribution','SwiftUI product flow and shared state architecture.']], links:[['View Code','https://github.com/Vignesh-0319/PlantNotes'],['Watch Demo','https://youtube.com/shorts/rJ5QC1g4a5w']] },
+  { id:'speakup', title:'SpeakUp', subtitle:'Speaking Practice Prototype', type:'NATIVE IOS / AVFOUNDATION', art:'wave', description:'A practice flow with scenario selection, local AAC recording, live waveform feedback, and a progress chart using sample confidence scores.', details:[['Technical decision','AVFoundation handles local recording and audio amplitude calculation for the live waveform.'],['Label','Prototype interface; progress scores are sample data.']], links:[['View Code','https://github.com/Vignesh-0319/SpeakUp']] },
+  { id:'ecobin', title:'EcoBin', subtitle:'Recycling Map Prototype', type:'NATIVE IOS / MAPS', art:'map', description:'A recycling map with a selected-bin sheet and location-based check-in eligibility.', details:[['Technical decision','An async API client uses typed JSON decoding and explicit HTTP error handling.'],['Label','Prototype interface; map pins and bin details use sample data.']], links:[['View Code','https://github.com/Vignesh-0319/EcoBin']] },
+  { id:'hookly', title:'Hookly', subtitle:'Interactive App Prototype', type:'FIGMA CASE STUDY', art:'plant', description:'A Figma case study from onboarding through the main app flow, with dark-mode refinements and interaction polish.', details:[['Technical decision','Reduced visual friction by keeping the primary action and navigation hierarchy consistent across the flow.'],['Label','Interactive prototype; not a production app.']], links:[['Open Prototype','https://www.figma.com/make/xjAyjaj0ShJAlOoV390fcW/Hookly-By-Vega-?p=f&t=5a9Zgj8FOB0RE6sM-0']] }
 ];
+const certificates = [
+  {title:'Oracle Cloud Infrastructure 2025 Certified Developer Professional',issuer:'Oracle Cloud',year:'2025',featured:true,url:'certificates/Oracle_OCI_Developer_Professional.pdf'},
+  {title:'Oracle Cloud Infrastructure 2025 Certified DevOps Professional',issuer:'Oracle Cloud',year:'2025',featured:true,url:'certificates/Oracle_OCI_DevOps_Professional.pdf'},
+  {title:'Microsoft Azure Fundamentals',issuer:'Microsoft',year:'2024'},
+  {title:'IBM Web Development Fundamentals',issuer:'IBM',year:'2024'},
+  {title:'Social Media Marketing in Practice Specialization',issuer:'Digital Marketing Institute'},
+  {title:'Machine Learning and Image Processing',issuer:'NASSCOM Foundation · thingQbator'},
+  {title:'HackerRank Orchestra',issuer:'HackerRank'},
+  {title:'Basics of Python',issuer:'Infosys Springboard'},
+  {title:'Digital Transformation in Financial Services Specialization',issuer:'Copenhagen Business School'},
+  {title:'Finance for Everyone Specialization',issuer:'McMaster University'},
+  {title:'Natural Disaster and Climate Change Risk Assessment Specialization',issuer:'Inter-American Development Bank'}
+];
+const $ = selector => document.querySelector(selector);
+$('#year').textContent = new Date().getFullYear();
 
-const list = document.getElementById('projects-list');
-list.innerHTML = projects.map((p,i) => `
-  <div class="project ${i%2===1?'reverse':''}">
-    <div>
-      <h3>${p.name}</h3>
-      <p>${p.description}</p>
-      <div class="tags">${p.tools.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
-    </div>
-    <div class="proj-card">
-      <div class="card-bar"><span></span><span></span><span></span></div>
-<pre><span class="c-pink">const</span> <span class="c-blue">project</span> = {
-  <span class="c-blue">name</span>: <span class="c-yellow">'${p.name}'</span>,
-  <span class="c-blue">tools</span>: [<span class="c-yellow">${p.tools.map(t=>`'${t}'`).join(", ")}</span>],
-  <span class="c-blue">myRole</span>: <span class="c-orange">'${p.role}'</span>,
-};</pre>
-    </div>
-  </div>`).join('');
+function renderProjects() {
+  $('#projectsGrid').innerHTML = projects.map(project => `<article class="project-card ${project.featured ? 'featured' : ''}">
+    <div class="project-art ${project.art}"><div class="map-grid"></div>${project.art === 'map' ? '<div class="phone-screen"></div>' : ''}</div>
+    <div class="project-card-copy"><span class="panel-index">${project.type}</span><h3>${project.title}</h3><p>${project.description}</p><div class="project-meta"><span>${project.subtitle}</span><span>↗</span></div><div class="project-actions"><button data-project="${project.id}">Open case study</button>${project.links.map(link => `<a href="${link[1]}" target="_blank" rel="noopener">${link[0]} ↗</a>`).join('')}</div></div>
+  </article>`).join('');
+}
+function renderFilters() {
+  const issuers = ['ALL', ...new Set(certificates.map(item => item.issuer))];
+  $('#issuerFilters').innerHTML = issuers.map(issuer => `<button class="${issuer === 'ALL' ? 'active' : ''}" data-issuer="${issuer}">${issuer}</button>`).join('');
+}
+let activeIssuer = 'ALL';
+function renderCertificates() {
+  const query = $('#certificateSearch').value.toLowerCase();
+  const visible = certificates.filter(item => (activeIssuer === 'ALL' || item.issuer === activeIssuer) && `${item.title} ${item.issuer} ${item.year}`.toLowerCase().includes(query));
+  $('#certificateList').innerHTML = visible.length ? visible.map(item => `<article class="certificate-entry ${item.featured ? 'featured' : ''}"><div><small>${item.issuer.toUpperCase()} ${item.year ? `· ${item.year}` : ''}</small><h3>${item.title}</h3></div>${item.url ? `<a href="${item.url}" target="_blank" rel="noopener">VIEW CREDENTIAL ↗</a>` : '<span class="panel-index">ARCHIVED</span>'}</article>`).join('') : '<p class="panel-index">NO MATCHES IN ARCHIVE</p>';
+}
+renderProjects(); renderFilters(); renderCertificates();
+$('#certificateSearch').addEventListener('input', renderCertificates);
+$('#issuerFilters').addEventListener('click', event => { const button = event.target.closest('button'); if (!button) return; activeIssuer = button.dataset.issuer; document.querySelectorAll('#issuerFilters button').forEach(item => item.classList.toggle('active', item === button)); renderCertificates(); });
 
-// Contact form -> mailto
-document.getElementById('contactForm').addEventListener('submit', e => {
-  e.preventDefault();
-  const f = e.target;
-  const subject = encodeURIComponent(f.subject.value);
-  const body = encodeURIComponent(`Name: ${f.name.value}\nEmail: ${f.email.value}\n\n${f.message.value}`);
-  window.location.href = `mailto:vignesh@example.com?subject=${subject}&body=${body}`;
+const introVideo = $('#introVideo'), skipIntro = $('#skipIntro'), replayIntro = $('#replayIntro'), introStatus = $('#introStatus');
+const introSeen = sessionStorage.getItem('vb-intro-seen');
+function finishIntro() { document.body.classList.add('intro-finished'); skipIntro.hidden = true; replayIntro.hidden = false; if (introVideo) introVideo.pause(); }
+function playIntro() { document.body.classList.remove('intro-finished'); skipIntro.hidden = false; replayIntro.hidden = true; if (introVideo && introVideo.readyState) introVideo.play().catch(() => finishIntro()); }
+if (introSeen) finishIntro(); else window.setTimeout(finishIntro, 4000);
+skipIntro.addEventListener('click', () => { sessionStorage.setItem('vb-intro-seen', '1'); finishIntro(); });
+replayIntro.addEventListener('click', () => { sessionStorage.removeItem('vb-intro-seen'); playIntro(); });
+introVideo.addEventListener('timeupdate', () => { introStatus.textContent = `INTRO / 00:${String(Math.floor(introVideo.currentTime)).padStart(2, '0')}`; });
+introVideo.addEventListener('error', () => { introVideo.style.display = 'none'; });
+
+document.querySelectorAll('.scene-nav a').forEach(link => {
+  link.addEventListener('mouseenter', () => { $('#navPreview').textContent = link.dataset.preview; });
+  link.addEventListener('focus', () => { $('#navPreview').textContent = link.dataset.preview; });
 });
+const caseStudy = $('#caseStudy');
+function openCase(id) {
+  const project = projects.find(item => item.id === id); if (!project) return;
+  $('#caseNumber').textContent = `${project.type} / CASE STUDY`; $('#caseTitle').textContent = `${project.title} — ${project.subtitle}`; $('#caseDescription').textContent = project.description;
+  $('#caseMedia').className = `case-media ${project.art}`; $('#caseMedia').innerHTML = project.art === 'map' ? '<div class="map-grid"></div><div class="phone-screen"></div>' : project.art === 'wave' ? '<span class="wave-large">∿∿∿∿∿∿∿</span>' : '<span class="plant-large">✳</span>';
+  $('#caseDetails').innerHTML = project.details.map(detail => `<div class="case-detail"><b>${detail[0]}</b><span>${detail[1]}</span></div>`).join('');
+  $('#caseLinks').innerHTML = project.links.map(link => `<a href="${link[1]}" target="_blank" rel="noopener">${link[0]} ↗</a>`).join('');
+  caseStudy.classList.add('open'); caseStudy.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; $('.close-case').focus();
+}
+$('#projectsGrid').addEventListener('click', event => { const button = event.target.closest('[data-project]'); if (button) openCase(button.dataset.project); });
+function closeCase() { caseStudy.classList.remove('open'); caseStudy.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
+caseStudy.addEventListener('click', event => { if (event.target.matches('[data-close-case]')) closeCase(); });
+document.addEventListener('keydown', event => { if (event.key === 'Escape') closeCase(); });
+
+$('.copy-email').addEventListener('click', async event => { const button = event.currentTarget; try { await navigator.clipboard.writeText(button.dataset.email); $('#copyMessage').textContent = 'Copied — ready to paste'; } catch { $('#copyMessage').textContent = button.dataset.email; } });

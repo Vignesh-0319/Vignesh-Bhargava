@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#0b0b0d"/>
+  <path d="M470 0h660L1450 900H150z" fill="#1b1d1e"/>
+  <path d="M0 680L1600 560v340H0z" fill="#111214"/>
+  <path d="M590 0h420L1260 900H330z" fill="#f0efe9" opacity=".08"/>
+  <path d="M380 650c120-120 420-170 690-50l-45 100H370z" fill="#2f8d26"/>
+  <path d="M520 600l170-65 240 8 165 82-35 88H480z" fill="#153d1b"/>
+  <circle cx="615" cy="690" r="52" fill="#08090a"/><circle cx="1000" cy="690" r="52" fill="#08090a"/>
+  <text x="800" y="350" fill="#b5ff3d" text-anchor="middle" font-family="monospace" font-size="26" letter-spacing="8">VIGNESH BHARGAVA / OPENING SCENE</text>
+</svg>
