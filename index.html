@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c0e0d">
+  <meta name="description" content="Vignesh Bhargava. Native iOS apps, thoughtful interfaces, and the backend systems behind them. Explore my work, credentials, and technical story.">
+  <meta property="og:title" content="Vignesh Bhargava — iOS & Backend Developer">
+  <meta property="og:description" content="Native apps. Thoughtful interfaces. Systems that connect them.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/portrait-reveal.jpg">
+  <title>Vignesh Bhargava — iOS & Backend Developer</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2712%27 fill=%27%230c0e0d%27/%3E%3Ctext x=%278%27 y=%2743%27 font-family=%27Arial%27 font-size=%2730%27 font-weight=%27700%27 fill=%27%23c2f46e%27%3EVB%3C/text%3E%3C/svg%3E">
+  <link rel="preload" href="assets/portrait-reveal.jpg" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="world" aria-hidden="true">
+    <img class="world-image" src="assets/portrait-reveal.jpg" alt="" fetchpriority="high" width="1586" height="990">
+    <div class="world-shade"></div>
+    <canvas id="atmosphere"></canvas>
+  </div>
+  <header class="header">
+    <a href="#home" class="brand" aria-label="Vignesh Bhargava home"><span class="brand-mark">VB<span>.</span></span><span class="brand-caption">VIGNESH<br>BHARGAVA</span></a>
+    <div class="header-right"><span class="availability"><span class="status-dot"></span> OPEN TO OPPORTUNITIES</span><a class="resume-link" href="assets/Vignesh_Bhargava_Resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span></a></div>
+  </header>
+  <main id="main" tabindex="-1">
+    <section id="home-view" class="home-view view" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="tiny-line"></span> IOS & BACKEND DEVELOPER</p>
+        <h1 id="hero-title"><span>VIGNESH</span><span>BHARGAVA<span class="green-dot">.</span></span></h1>
+        <p class="hero-description">I build native iOS apps<br>and the systems behind them.</p>
+        <a class="hero-cta" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-aside"><span class="mono">BASED IN INDIA</span><span class="local-time" id="local-time"></span></div>
+      <div class="scene-controls"><button id="replay-intro" class="text-button"><span aria-hidden="true">↻</span> Replay intro</button><span class="scene-divider"></span><button id="sound-toggle" class="text-button" aria-pressed="false"><span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="sound-label">Sound off</span></button></div>
+      <p class="home-caption">CURIOUS BY NATURE. <span>DEVELOPER BY CHOICE.</span></p>
+    </section>
+    <section id="projects-view" class="page-view view" hidden aria-labelledby="projects-title">
+      <div class="page-intro"><p class="eyebrow">SELECTED WORK</p><h1 id="projects-title" class="page-title">Ideas, made <em>real.</em></h1><p>From a first sketch to the logic beneath the screen.</p></div>
+      <div class="project-filter filters" aria-label="Filter projects"><button class="filter active" data-project-filter="all" aria-pressed="true">All work <span>05</span></button><button class="filter" data-project-filter="ios" aria-pressed="false">iOS</button><button class="filter" data-project-filter="backend" aria-pressed="false">Backend</button><button class="filter" data-project-filter="design" aria-pressed="false">Product design</button></div>
+      <div class="projects-grid" id="projects-grid"></div>
+      <a class="next-section" href="#certificates"><span>THE LEARNING BEHIND THE WORK</span><strong>Explore my credentials <b>↗</b></strong></a>
+    </section>
+    <section id="certificates-view" class="page-view view" hidden aria-labelledby="certificates-title">
+      <div class="page-intro"><p class="eyebrow">CERTIFICATES & LEARNING</p><h1 id="certificates-title" class="page-title">Always <em>leveling up.</em></h1><p>A growing collection of cloud credentials, technical courses, and a little curiosity beyond code.</p></div>
+      <div class="featured-certificates" id="featured-certificates"></div>
+      <div class="archive-header"><h2>The complete collection</h2><span id="certificate-count" class="mono" aria-live="polite"></span></div>
+      <div class="cert-toolbar"><label class="search-field"><span aria-hidden="true">⌕</span><input id="certificate-search" type="search" placeholder="Search title, issuer, or topic" aria-label="Search certificates"><kbd aria-hidden="true">/</kbd></label><select id="certificate-issuer" aria-label="Filter certificates by issuer"><option value="all">All issuers</option></select></div>
+      <div class="certificate-list" id="certificate-list"></div>
+      <p id="cert-empty" class="empty-state" hidden>No matching credentials. Try another title or issuer.</p>
+      <div class="learning-footer"><span class="status-dot"></span><p>Each credential is listed once. Certificate files and issuer links are included when available.</p></div>
+    </section>
+    <section id="about-view" class="page-view view" hidden aria-labelledby="about-title">
+      <div class="page-intro"><p class="eyebrow">A LITTLE ABOUT ME</p><h1 id="about-title" class="page-title">Curiosity, <em>in motion.</em></h1></div>
+      <div class="about-layout"><div class="portrait-wrap"><img src="assets/portrait-reveal.jpg" alt="Vignesh Bhargava" width="600" height="600" loading="lazy"><div class="portrait-label"><span>VIGNESH BHARGAVA</span><span>PUNJAB, INDIA ↗</span></div></div><div class="about-copy"><h2>I like knowing what happens<br><span>behind the screen.</span></h2><p>I’m a Computer Science and Engineering student at Chitkara University. I build native iOS apps, work on backend APIs, and turn ideas into interactive prototypes.</p><p>My projects have taken me from shared state in SwiftUI to audio processing, location-aware interfaces, and MongoDB geospatial queries. I enjoy understanding how the pieces connect, then making that complexity feel simple to use.</p><div class="education"><span class="mono">CHITKARA UNIVERSITY</span><strong>B.E. Computer Science & Engineering</strong><div><span>Expected June 2028</span><span>CGPA <b>8.81 / 10</b></span></div></div><a class="button outline" href="assets/Vignesh_Bhargava_Resume.pdf" target="_blank" rel="noopener">Read my résumé <span>↗</span></a></div></div>
+      <section class="toolbox"><div><p class="eyebrow">MY TOOLBOX</p><h2>Built with these.</h2></div><div class="tool-groups"><div><h3>Languages</h3><p>Swift · Java · JavaScript · Python · C++ · SQL</p></div><div><h3>Interfaces</h3><p>SwiftUI · Observation · AVFoundation · MapKit · React · Figma</p></div><div><h3>Systems</h3><p>Node.js · Express · MongoDB · MySQL · REST APIs · Git · Oracle Cloud</p></div></div></section>
+      <div class="achievement-grid"><article><span class="achievement-number">202<span>+</span></span><h3>Problems. And counting.</h3><p>A 202-problem LeetCode milestone, with Java solutions across dynamic programming, sliding windows, trees, and graphs.</p><a href="https://github.com/Vignesh-0319/leetcode-solutions" target="_blank" rel="noopener">Read the solutions ↗</a></article><article><span class="achievement-number">R3<span>↗</span></span><h3>HP Power Lab 2.0</h3><p>Advanced to the Detailed Presentation Submission round with Team Mysterious Four in HPCL’s 2026 competition.</p><a href="https://www.linkedin.com/feed/update/urn:li:activity:7484529066541203457/" target="_blank" rel="noopener">View the milestone ↗</a></article></div>
+    </section>
+    <section id="contact-view" class="page-view contact-view view" hidden aria-labelledby="contact-title">
+      <div class="contact-top"><p class="eyebrow"><span class="status-dot"></span> OPEN TO OPPORTUNITIES</p><h1 id="contact-title">LET’S BUILD<br>SOMETHING <em>GOOD.</em></h1><p>Have an internship, a project, or an idea worth exploring?<br>I’d like to hear about it.</p></div>
+      <div class="email-row"><a href="mailto:bhargava.vignesh@gmail.com">bhargava.vignesh@gmail.com <span>↗</span></a><button id="copy-email" class="copy-button" aria-label="Copy email address"><span aria-hidden="true">⧉</span><span>Copy</span></button></div>
+      <div class="contact-links"><a href="https://www.linkedin.com/in/vignesh-bhargava2006/" target="_blank" rel="noopener"><span class="social-mark">in</span><span>LinkedIn<small>Let’s connect</small></span><b>↗</b></a><a href="https://github.com/Vignesh-0319" target="_blank" rel="noopener"><span class="social-mark">⌘</span><span>GitHub<small>Explore the code</small></span><b>↗</b></a><a href="assets/Vignesh_Bhargava_Resume.pdf" target="_blank" rel="noopener"><span class="social-mark">↓</span><span>Résumé<small>A closer look</small></span><b>↗</b></a></div>
+      <div class="contact-bottom"><span>PUNJAB, INDIA</span><span>Thanks for stopping by.</span></div>
+    </section>
+  </main>
+  <nav class="dock" aria-label="Main navigation"><a href="#home" class="dock-home active" aria-label="Home"><span>VB<span>.</span></span></a><div class="dock-links"><a href="#projects" data-route="projects"><span>Projects</span><span class="nav-arrow">↗</span></a><a href="#certificates" data-route="certificates"><span>Certificates</span><span class="nav-arrow">↗</span></a><a href="#about" data-route="about"><span>About</span><span class="nav-arrow">↗</span></a><a href="#contact" data-route="contact"><span>Contact</span><span class="nav-arrow">↗</span></a></div><span class="dock-indicator" aria-hidden="true"></span></nav>
+  <div id="intro" class="intro" hidden aria-hidden="true"><div id="intro-canvas"></div><div class="intro-label">VIGNESH BHARGAVA <span>PORTFOLIO</span></div><button id="skip-intro">Skip intro <span>↗</span></button><div class="intro-name">VIGNESH<br>BHARGAVA<span>.</span></div><div class="intro-progress"><span></span></div></div>
+  <dialog id="case-dialog" class="case-dialog" aria-labelledby="case-title"><div class="dialog-top"><span class="mono" id="case-category"></span><button class="dialog-close" data-close-dialog aria-label="Close case study">×</button></div><div id="case-content"></div></dialog>
+  <dialog id="credential-dialog" class="credential-dialog" aria-labelledby="credential-title"><button class="dialog-close" data-close-dialog aria-label="Close credential">×</button><div id="credential-content"></div></dialog>
+  <div class="toast" role="status" id="toast" aria-live="polite"></div>
+  <noscript><style>.home-view{display:block!important}.dock{display:none}</style><div class="noscript-note">JavaScript enables the portfolio panels. You can also visit <a href="https://github.com/Vignesh-0319">my GitHub</a> or <a href="assets/Vignesh_Bhargava_Resume.pdf">read my résumé</a>.</div></noscript>
+</body>
+</html>
